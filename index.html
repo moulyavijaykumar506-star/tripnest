@@ -1,0 +1,664 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Discover beautiful destinations and plan your next holiday with TripNest Adventures, based in Hassan, Karnataka.">
+  <title>TripNest Adventures | Find Your Next Escape</title>
+
+  <style>
+    :root {
+      --sage: #78988a;
+      --sage-dark: #496b5d;
+      --sage-light: #e5eee8;
+      --ivory: #fffdf7;
+      --beige: #f1eadc;
+      --ink: #293b33;
+      --muted: #718078;
+      --white: #ffffff;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background: var(--ivory);
+      color: var(--ink);
+      line-height: 1.7;
+    }
+
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: rgba(255, 253, 247, 0.96);
+      border-bottom: 1px solid var(--beige);
+      padding: 15px 7%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    .logo {
+      color: var(--sage-dark);
+      font-size: 21px;
+      font-weight: 800;
+    }
+
+    .logo span {
+      color: var(--sage);
+    }
+
+    nav ul {
+      display: flex;
+      gap: 22px;
+      list-style: none;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      color: var(--ink);
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    nav a:hover {
+      color: var(--sage);
+    }
+
+    .hero {
+      min-height: 510px;
+      padding: 100px 7%;
+      display: flex;
+      align-items: center;
+      text-align: center;
+      justify-content: center;
+      color: white;
+      background:
+        linear-gradient(rgba(35, 62, 50, 0.52), rgba(35, 62, 50, 0.52)),
+        url("https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&w=1800&q=85")
+        center/cover no-repeat;
+    }
+
+    .hero-content {
+      max-width: 760px;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      background: rgba(255,255,255,0.18);
+      border: 1px solid rgba(255,255,255,0.45);
+      border-radius: 30px;
+      padding: 6px 17px;
+      margin-bottom: 20px;
+      font-size: 13px;
+      letter-spacing: 1px;
+    }
+
+    .hero h1 {
+      font-size: clamp(38px, 6vw, 62px);
+      line-height: 1.15;
+      margin-bottom: 18px;
+    }
+
+    .hero p {
+      font-size: 17px;
+      max-width: 590px;
+      margin: 0 auto 28px;
+    }
+
+    .btn {
+      display: inline-block;
+      background: var(--sage-dark);
+      color: white;
+      padding: 12px 25px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: 700;
+      transition: 0.2s;
+      border: none;
+      cursor: pointer;
+    }
+
+    .hero .btn {
+      background: white;
+      color: var(--sage-dark);
+    }
+
+    .btn:hover {
+      transform: translateY(-3px);
+      opacity: 0.9;
+    }
+
+    section {
+      padding: 70px 7%;
+      scroll-margin-top: 75px;
+    }
+
+    .section-heading {
+      text-align: center;
+      max-width: 650px;
+      margin: 0 auto 35px;
+    }
+
+    .section-heading h2 {
+      color: var(--sage-dark);
+      font-size: 32px;
+      margin-bottom: 8px;
+    }
+
+    .section-heading p {
+      color: var(--muted);
+    }
+
+    .about-content {
+      max-width: 850px;
+      margin: auto;
+      text-align: center;
+      font-size: 16px;
+    }
+
+    .about-content p {
+      margin-bottom: 15px;
+    }
+
+    .soft-section {
+      background: var(--sage-light);
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 22px;
+    }
+
+    .card {
+      background: white;
+      border: 1px solid #e8e9df;
+      border-radius: 18px;
+      overflow: hidden;
+      transition: 0.25s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 25px rgba(40, 70, 55, 0.10);
+    }
+
+    .card img {
+      width: 100%;
+      height: 190px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .card-content {
+      padding: 21px;
+    }
+
+    .card h3 {
+      color: var(--sage-dark);
+      margin-bottom: 8px;
+      font-size: 19px;
+    }
+
+    .card p {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .tag {
+      display: inline-block;
+      background: var(--sage-light);
+      color: var(--sage-dark);
+      padding: 4px 11px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 18px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .why-card {
+      background: white;
+      border-radius: 16px;
+      padding: 25px;
+      text-align: center;
+      border: 1px solid var(--beige);
+    }
+
+    .why-card .emoji {
+      font-size: 30px;
+      margin-bottom: 10px;
+    }
+
+    .why-card h3 {
+      color: var(--sage-dark);
+      font-size: 17px;
+      margin-bottom: 7px;
+    }
+
+    .why-card p {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .review-note {
+      max-width: 700px;
+      margin: auto;
+      background: white;
+      border-radius: 18px;
+      padding: 28px;
+      text-align: center;
+      border: 1px solid var(--beige);
+    }
+
+    .review-note p {
+      color: var(--muted);
+    }
+
+    .contact-wrap {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 25px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .contact-info,
+    .contact-form {
+      background: white;
+      padding: 28px;
+      border: 1px solid var(--beige);
+      border-radius: 18px;
+    }
+
+    .contact-info h3,
+    .contact-form h3 {
+      color: var(--sage-dark);
+      margin-bottom: 15px;
+    }
+
+    .contact-info p {
+      color: var(--muted);
+      margin-bottom: 13px;
+      font-size: 15px;
+    }
+
+    .contact-form label {
+      display: block;
+      margin: 12px 0 5px;
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .contact-form input,
+    .contact-form select,
+    .contact-form textarea {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #d9e1d9;
+      border-radius: 9px;
+      background: var(--ivory);
+      font: inherit;
+      color: var(--ink);
+    }
+
+    .contact-form textarea {
+      min-height: 110px;
+      resize: vertical;
+    }
+
+    .contact-form .btn {
+      margin-top: 17px;
+      width: 100%;
+    }
+
+    .form-note {
+      font-size: 12px;
+      color: var(--muted);
+      margin-top: 10px;
+    }
+
+    footer {
+      background: var(--ink);
+      color: #e7eee8;
+      text-align: center;
+      padding: 32px 7%;
+      font-size: 13px;
+    }
+
+    footer p {
+      margin: 5px 0;
+    }
+
+    footer a {
+      color: #c4dfcf;
+      text-decoration: none;
+    }
+
+    @media (max-width: 650px) {
+      nav {
+        justify-content: center;
+      }
+
+      nav ul {
+        justify-content: center;
+        gap: 13px;
+      }
+
+      .hero {
+        min-height: 450px;
+        padding: 75px 6%;
+      }
+
+      section {
+        padding: 52px 6%;
+      }
+
+      .section-heading h2 {
+        font-size: 27px;
+      }
+
+      .contact-wrap {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav>
+    <div class="logo">TripNest <span>Adventures ✿</span></div>
+
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#destinations">Destinations</a></li>
+      <li><a href="#experiences">Experiences</a></li>
+      <li><a href="#reviews">Why Us</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <header class="hero">
+    <div class="hero-content">
+      <div class="eyebrow">✦ YOUR NEXT ADVENTURE STARTS HERE ✦</div>
+      <h1>Collect Moments,<br>Not Just Miles.</h1>
+      <p>
+        From peaceful weekend escapes to exciting international holidays,
+        let's make your travel dreams come true.
+      </p>
+      <a class="btn" href="#contact">Plan Your Trip ↗</a>
+    </div>
+  </header>
+
+  <section id="about">
+    <div class="section-heading">
+      <h2>A Little About Us 🌿</h2>
+      <p>Your friendly travel-planning companion in Hassan.</p>
+    </div>
+
+    <div class="about-content">
+      <p>
+        Welcome to <strong>TripNest Adventures</strong> — a travel agency
+        concept based in Hassan, Karnataka, created for people who love
+        discovering new places and making beautiful memories.
+      </p>
+      <p>
+        Whether you dream of exploring India's colourful destinations,
+        relaxing on a beach, discovering mountain trails or travelling
+        abroad, we're here to help you plan an experience that feels right
+        for you.
+      </p>
+    </div>
+  </section>
+
+  <section class="soft-section" id="destinations">
+    <div class="section-heading">
+      <h2>Places to Fall in Love With ✈️</h2>
+      <p>A little inspiration for your next journey.</p>
+    </div>
+
+    <div class="cards">
+      <div class="card">
+        <img
+          src="https://images.unsplash.com/photo-1524492412937-b28074a5d7da?auto=format&fit=crop&w=800&q=80"
+          alt="Taj Mahal in India">
+        <div class="card-content">
+          <span class="tag">INDIA</span>
+          <h3>Explore India</h3>
+          <p>Discover heritage cities, beautiful beaches, hill stations and unforgettable local experiences.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <img
+          src="https://images.unsplash.com/photo-1504214208698-ea1916a2195a?auto=format&fit=crop&w=800&q=80"
+          alt="Beautiful tropical beach">
+        <div class="card-content">
+          <span class="tag">INTERNATIONAL</span>
+          <h3>Beyond Borders</h3>
+          <p>Dream about new cultures, scenic destinations and exciting adventures around the world.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <img
+          src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=800&q=80"
+          alt="Beautiful mountain landscape">
+        <div class="card-content">
+          <span class="tag">NATURE</span>
+          <h3>Mountain Escapes</h3>
+          <p>Slow down, breathe fresh air and enjoy peaceful views surrounded by nature.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="experiences">
+    <div class="section-heading">
+      <h2>Find Your Kind of Trip 💚</h2>
+      <p>Every traveller has a different idea of the perfect holiday.</p>
+    </div>
+
+    <div class="cards">
+      <div class="card">
+        <div class="card-content">
+          <h3>🏕️ Adventure Trips</h3>
+          <p>For explorers who love trekking, outdoor activities and exciting new experiences.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-content">
+          <h3>👨‍👩‍👧 Family Holidays</h3>
+          <p>Enjoy meaningful holidays and special memories with the people you love.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-content">
+          <h3>💍 Honeymoon Getaways</h3>
+          <p>Celebrate together with relaxing stays and romantic destinations.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-content">
+          <h3>🌸 Weekend Escapes</h3>
+          <p>Take a refreshing break from your routine with a short getaway.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-content">
+          <h3>🌏 International Tours</h3>
+          <p>Explore new countries, cultures and experiences beyond India.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-content">
+          <h3>🕌 Domestic Tours</h3>
+          <p>Discover the beauty, history and diversity of destinations across India.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="soft-section" id="reviews">
+    <div class="section-heading">
+      <h2>Why Travel With Us? ✨</h2>
+      <p>Thoughtful planning makes every journey better.</p>
+    </div>
+
+    <div class="why-grid">
+      <div class="why-card">
+        <div class="emoji">💚</div>
+        <h3>Personal Touch</h3>
+        <p>Travel ideas shaped around your interests and preferences.</p>
+      </div>
+
+      <div class="why-card">
+        <div class="emoji">🧭</div>
+        <h3>Many Choices</h3>
+        <p>Ideas for domestic, international and different types of trips.</p>
+      </div>
+
+      <div class="why-card">
+        <div class="emoji">🌷</div>
+        <h3>Friendly Planning</h3>
+        <p>A simple and welcoming way to start planning your next holiday.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-heading">
+      <h2>A Note for Future Travellers 💌</h2>
+      <p>Every great journey begins with an idea.</p>
+    </div>
+
+    <div class="review-note">
+      <p>
+        "The world is full of beautiful places waiting to be explored.
+        Your next favourite memory could begin with one little trip."
+      </p>
+      <strong>— The TripNest Adventures Team</strong>
+    </div>
+  </section>
+
+  <section class="soft-section" id="contact">
+    <div class="section-heading">
+      <h2>Let's Plan Something Beautiful 🌼</h2>
+      <p>Tell us what kind of trip you have in mind.</p>
+    </div>
+
+    <div class="contact-wrap">
+      <div class="contact-info">
+        <h3>Get in Touch</h3>
+        <p>📍 <strong>Location:</strong> Hassan, Karnataka, India</p>
+        <p>✉️ <strong>Email:</strong>
+          <a href="mailto:tripnestadventures@gmail.com">
+            tripnestadventures@gmail.com
+          </a>
+        </p>
+        <p>🌿 <strong>Travel:</strong> Domestic and international destinations</p>
+        <p>
+          Have a destination in mind? Send us an enquiry and start
+          imagining your next adventure.
+        </p>
+      </div>
+
+      <form class="contact-form" id="enquiryForm">
+        <h3>Travel Enquiry Form</h3>
+
+        <label for="name">Your Name</label>
+        <input type="text" id="name" placeholder="Enter your name" required>
+
+        <label for="email">Your Email</label>
+        <input type="email" id="email" placeholder="Enter your email" required>
+
+        <label for="trip">Type of Trip</label>
+        <select id="trip" required>
+          <option value="">Choose your trip</option>
+          <option>Domestic Tour</option>
+          <option>International Tour</option>
+          <option>Adventure Trip</option>
+          <option>Family Holiday</option>
+          <option>Honeymoon</option>
+          <option>Weekend Getaway</option>
+        </select>
+
+        <label for="message">Your Travel Plans</label>
+        <textarea id="message" placeholder="Where would you like to go? Tell us a little about your plans." required></textarea>
+
+        <button type="submit" class="btn">Send Enquiry ✉️</button>
+
+        <p class="form-note">
+          Demo form: submitting opens an email draft in your email application.
+          It does not store enquiries online.
+        </p>
+      </form>
+    </div>
+  </section>
+
+  <footer>
+    <p><strong>TripNest Adventures ✿</strong></p>
+    <p>Making room for more beautiful journeys.</p>
+    <p>Hassan, Karnataka, India</p>
+    <p>
+      <a href="mailto:tripnestadventures@gmail.com">
+        tripnestadventures@gmail.com
+      </a>
+    </p>
+    <p>© 2026 TripNest Adventures. All rights reserved.</p>
+
+    <!-- Student branding line: add your name and official access key
+    only if these have been provided to you by ApnoAI. -->
+  </footer>
+
+  <script>
+    document.getElementById("enquiryForm").addEventListener("submit", function(event) {
+      event.preventDefault();
+
+      const name = document.getElementById("name").value.trim();
+      const email = document.getElementById("email").value.trim();
+      const trip = document.getElementById("trip").value;
+      const message = document.getElementById("message").value.trim();
+
+      const subject = encodeURIComponent("Travel Enquiry - TripNest Adventures");
+      const body = encodeURIComponent(
+        "Name: " + name +
+        "\nEmail: " + email +
+        "\nType of Trip: " + trip +
+        "\nTravel Plans: " + message
+      );
+
+      window.location.href =
+        "mailto:tripnestadventures@gmail.com?subject=" + subject + "&body=" + body;
+    });
+  </script>
+
+</body>
+</html>
